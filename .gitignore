@@ -1,0 +1,17 @@
+# Generated row-level outputs
+outputs/**
+!outputs/README.md
+
+# Fitted-model formats are not committed
+*.joblib
+*.pkl
+*.pickle
+
+# Local and Python artefacts
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.idea/
+.vscode/
+

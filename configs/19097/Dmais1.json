@@ -1,0 +1,103 @@
+{
+  "version": "V2_HIBRIDO_TODOS_OS_DIAS",
+  "created_before_development_comparison": true,
+  "outlet": "19097",
+  "h": 1,
+  "training_period": "2018-2022",
+  "validation_years": [
+    2020,
+    2021,
+    2022
+  ],
+  "development_comparison_period": "2023-2024",
+  "final_reserved_period": "2025",
+  "regression": {
+    "model": "SVR_RBF",
+    "feature_set": "HDW",
+    "features": [
+      "Q_L_m3s",
+      "Q_Lm1_m3s",
+      "Q_Lm3_m3s",
+      "Q_Lm7_m3s",
+      "C5_referencia_m3s",
+      "A_persistencia_m3s",
+      "dQ_1d_m3s",
+      "dQ_3d_m3s",
+      "dQ_7d_m3s",
+      "slope_Q_3d_m3s_d",
+      "slope_Q_7d_m3s_d",
+      "Q_media_antecedente_m3s",
+      "Q_amplitude_antecedente_m3s",
+      "A_persistencia_menos_P80_m3s",
+      "sazonal_sin",
+      "sazonal_cos",
+      "WRF__Q2_168_191",
+      "WRF__Q2_202_197",
+      "WRF__Q2_129_164",
+      "WRF__Q2_209_164",
+      "WRF__Q2_146_197",
+      "WRF__Q2_171_197",
+      "WRF__Q2_30_195"
+    ],
+    "params": {
+      "C": 50.0,
+      "epsilon": 5.0,
+      "gamma": "scale"
+    },
+    "weight_high": 3.0,
+    "model_bias_oof_m3s": -19.390085230667356,
+    "blend_weight_model": 0.9500000000000001,
+    "blend_bias_oof_m3s": -0.03491116236162142
+  },
+  "classifier_P80": {
+    "model": "XGBOOST_CLF",
+    "feature_set": "HDW",
+    "features": [
+      "Q_L_m3s",
+      "Q_Lm1_m3s",
+      "Q_Lm3_m3s",
+      "Q_Lm7_m3s",
+      "C5_referencia_m3s",
+      "A_persistencia_m3s",
+      "dQ_1d_m3s",
+      "dQ_3d_m3s",
+      "dQ_7d_m3s",
+      "slope_Q_3d_m3s_d",
+      "slope_Q_7d_m3s_d",
+      "Q_media_antecedente_m3s",
+      "Q_amplitude_antecedente_m3s",
+      "A_persistencia_menos_P80_m3s",
+      "sazonal_sin",
+      "sazonal_cos",
+      "WRF__Q2_168_191",
+      "WRF__Q2_202_197",
+      "WRF__Q2_129_164",
+      "WRF__Q2_209_164",
+      "WRF__Q2_146_197",
+      "WRF__Q2_171_197",
+      "WRF__Q2_30_195"
+    ],
+    "params": {
+      "learning_rate": 0.04,
+      "max_depth": 2,
+      "n_estimators": 250
+    },
+    "threshold": 0.36499999999999994,
+    "threshold_rule": "maximizar recall com precisao >= 0.70",
+    "validation_metrics": {
+      "threshold": 0.36499999999999994,
+      "precision": 0.7062146892655368,
+      "recall": 0.7485029940119761,
+      "f1": 0.7267441860465116,
+      "tp": 125,
+      "fp": 52,
+      "fn": 42,
+      "tn": 865
+    }
+  },
+  "PI90": {
+    "q_global": 179.12713097146124,
+    "q_predicted_high": 343.0354965658238,
+    "q_other": 122.91015040113564
+  }
+}

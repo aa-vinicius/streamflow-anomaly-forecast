@@ -1,0 +1,107 @@
+{
+  "version": "V2_HIBRIDO_TODOS_OS_DIAS",
+  "created_before_development_comparison": true,
+  "outlet": "19094",
+  "h": 4,
+  "training_period": "2018-2022",
+  "validation_years": [
+    2020,
+    2021,
+    2022
+  ],
+  "development_comparison_period": "2023-2024",
+  "final_reserved_period": "2025",
+  "regression": {
+    "model": "EXTRA_TREES",
+    "feature_set": "HDW",
+    "features": [
+      "Q_L_m3s",
+      "Q_Lm1_m3s",
+      "Q_Lm3_m3s",
+      "Q_Lm7_m3s",
+      "C5_referencia_m3s",
+      "A_persistencia_m3s",
+      "dQ_1d_m3s",
+      "dQ_3d_m3s",
+      "dQ_7d_m3s",
+      "slope_Q_3d_m3s_d",
+      "slope_Q_7d_m3s_d",
+      "Q_media_antecedente_m3s",
+      "Q_amplitude_antecedente_m3s",
+      "A_persistencia_menos_P80_m3s",
+      "sazonal_sin",
+      "sazonal_cos",
+      "WRF__Q2_136_165",
+      "WRF__Q2_151_148",
+      "WRF__Q2_118_162",
+      "WRF__Q2_147_116",
+      "WRF__Q2_126_185",
+      "WRF__Q2_152_176",
+      "WRF__Q2_187_124",
+      "WRF__Q2_85_170",
+      "WRF__Q2_104_142",
+      "WRF__Q2_171_164"
+    ],
+    "params": {
+      "max_depth": null,
+      "max_features": 0.7,
+      "min_samples_leaf": 3
+    },
+    "weight_high": 3.0,
+    "model_bias_oof_m3s": -11.222270064867006,
+    "blend_weight_model": 0.7000000000000001,
+    "blend_bias_oof_m3s": -0.27874675324675274
+  },
+  "classifier_P80": {
+    "model": "LOGISTIC",
+    "feature_set": "HDW",
+    "features": [
+      "Q_L_m3s",
+      "Q_Lm1_m3s",
+      "Q_Lm3_m3s",
+      "Q_Lm7_m3s",
+      "C5_referencia_m3s",
+      "A_persistencia_m3s",
+      "dQ_1d_m3s",
+      "dQ_3d_m3s",
+      "dQ_7d_m3s",
+      "slope_Q_3d_m3s_d",
+      "slope_Q_7d_m3s_d",
+      "Q_media_antecedente_m3s",
+      "Q_amplitude_antecedente_m3s",
+      "A_persistencia_menos_P80_m3s",
+      "sazonal_sin",
+      "sazonal_cos",
+      "WRF__Q2_136_165",
+      "WRF__Q2_151_148",
+      "WRF__Q2_118_162",
+      "WRF__Q2_147_116",
+      "WRF__Q2_126_185",
+      "WRF__Q2_152_176",
+      "WRF__Q2_187_124",
+      "WRF__Q2_85_170",
+      "WRF__Q2_104_142",
+      "WRF__Q2_171_164"
+    ],
+    "params": {
+      "C": 1.0
+    },
+    "threshold": 0.48499999999999993,
+    "threshold_rule": "maximizar recall com precisao >= 0.70",
+    "validation_metrics": {
+      "threshold": 0.48499999999999993,
+      "precision": 0.8285714285714286,
+      "recall": 0.19333333333333333,
+      "f1": 0.31351351351351353,
+      "tp": 29,
+      "fp": 6,
+      "fn": 121,
+      "tn": 922
+    }
+  },
+  "PI90": {
+    "q_global": 151.4335647501975,
+    "q_predicted_high": 314.0148773833198,
+    "q_other": 126.22555978258731
+  }
+}

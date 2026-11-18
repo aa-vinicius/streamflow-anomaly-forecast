@@ -1,0 +1,97 @@
+{
+  "version": "V2_HIBRIDO_TODOS_OS_DIAS",
+  "created_before_development_comparison": true,
+  "outlet": "19097",
+  "h": 3,
+  "training_period": "2018-2022",
+  "validation_years": [
+    2020,
+    2021,
+    2022
+  ],
+  "development_comparison_period": "2023-2024",
+  "final_reserved_period": "2025",
+  "regression": {
+    "model": "SVR_RBF",
+    "feature_set": "HDW",
+    "features": [
+      "Q_L_m3s",
+      "Q_Lm1_m3s",
+      "Q_Lm3_m3s",
+      "Q_Lm7_m3s",
+      "C5_referencia_m3s",
+      "A_persistencia_m3s",
+      "dQ_1d_m3s",
+      "dQ_3d_m3s",
+      "dQ_7d_m3s",
+      "slope_Q_3d_m3s_d",
+      "slope_Q_7d_m3s_d",
+      "Q_media_antecedente_m3s",
+      "Q_amplitude_antecedente_m3s",
+      "A_persistencia_menos_P80_m3s",
+      "sazonal_sin",
+      "sazonal_cos",
+      "WRF__Q2_144_182",
+      "WRF__Q2_127_193",
+      "WRF__Q2_128_164",
+      "WRF__Q2_168_190",
+      "WRF__Q2_146_197",
+      "WRF__Q2_91_190",
+      "WRF__Q2_191_173",
+      "WRF__Q2_126_185"
+    ],
+    "params": {
+      "C": 50.0,
+      "epsilon": 5.0,
+      "gamma": "scale"
+    },
+    "weight_high": 3.0,
+    "model_bias_oof_m3s": -23.360951941671924,
+    "blend_weight_model": 0.9500000000000001,
+    "blend_bias_oof_m3s": -0.07691711378353487
+  },
+  "classifier_P80": {
+    "model": "XGBOOST_CLF",
+    "feature_set": "HD",
+    "features": [
+      "Q_L_m3s",
+      "Q_Lm1_m3s",
+      "Q_Lm3_m3s",
+      "Q_Lm7_m3s",
+      "C5_referencia_m3s",
+      "A_persistencia_m3s",
+      "dQ_1d_m3s",
+      "dQ_3d_m3s",
+      "dQ_7d_m3s",
+      "slope_Q_3d_m3s_d",
+      "slope_Q_7d_m3s_d",
+      "Q_media_antecedente_m3s",
+      "Q_amplitude_antecedente_m3s",
+      "A_persistencia_menos_P80_m3s",
+      "sazonal_sin",
+      "sazonal_cos"
+    ],
+    "params": {
+      "learning_rate": 0.06,
+      "max_depth": 2,
+      "n_estimators": 400
+    },
+    "threshold": 0.6399999999999999,
+    "threshold_rule": "maximizar recall com precisao >= 0.70",
+    "validation_metrics": {
+      "threshold": 0.6399999999999999,
+      "precision": 0.8,
+      "recall": 0.023952095808383235,
+      "f1": 0.046511627906976744,
+      "tp": 4,
+      "fp": 1,
+      "fn": 163,
+      "tn": 913
+    }
+  },
+  "PI90": {
+    "q_global": 293.5905265845089,
+    "q_predicted_high": 534.0669298091117,
+    "q_other": 208.20059617775206
+  }
+}

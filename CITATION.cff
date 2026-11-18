@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this workflow, please cite the associated article."
+title: "Operational multi-horizon forecasting of pentadal streamflow anomalies"
+type: software
+version: 1.0.0
+date-released: 2026-11-17
+authors:
+  - family-names: França
+    given-names: Gutemberg Borges
+  - family-names: Almeida
+    given-names: Vinicius Albuquerque de
+repository-code: "[GITHUB REPOSITORY URL TO BE INSERTED]"
+

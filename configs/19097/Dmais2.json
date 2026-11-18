@@ -1,0 +1,94 @@
+{
+  "version": "V2_HIBRIDO_TODOS_OS_DIAS",
+  "created_before_development_comparison": true,
+  "outlet": "19097",
+  "h": 2,
+  "training_period": "2018-2022",
+  "validation_years": [
+    2020,
+    2021,
+    2022
+  ],
+  "development_comparison_period": "2023-2024",
+  "final_reserved_period": "2025",
+  "regression": {
+    "model": "SVR_RBF",
+    "feature_set": "HDW",
+    "features": [
+      "Q_L_m3s",
+      "Q_Lm1_m3s",
+      "Q_Lm3_m3s",
+      "Q_Lm7_m3s",
+      "C5_referencia_m3s",
+      "A_persistencia_m3s",
+      "dQ_1d_m3s",
+      "dQ_3d_m3s",
+      "dQ_7d_m3s",
+      "slope_Q_3d_m3s_d",
+      "slope_Q_7d_m3s_d",
+      "Q_media_antecedente_m3s",
+      "Q_amplitude_antecedente_m3s",
+      "A_persistencia_menos_P80_m3s",
+      "sazonal_sin",
+      "sazonal_cos",
+      "WRF__Q2_169_193",
+      "WRF__Q2_129_197",
+      "WRF__Q2_156_181",
+      "WRF__Q2_136_180",
+      "WRF__Q2_81_174",
+      "WRF__Q2_159_196",
+      "WRF__Q2_129_165"
+    ],
+    "params": {
+      "C": 50.0,
+      "epsilon": 5.0,
+      "gamma": "scale"
+    },
+    "weight_high": 3.0,
+    "model_bias_oof_m3s": -23.519219648454133,
+    "blend_weight_model": 0.9,
+    "blend_bias_oof_m3s": -0.12237859778597474
+  },
+  "classifier_P80": {
+    "model": "LOGISTIC",
+    "feature_set": "HD",
+    "features": [
+      "Q_L_m3s",
+      "Q_Lm1_m3s",
+      "Q_Lm3_m3s",
+      "Q_Lm7_m3s",
+      "C5_referencia_m3s",
+      "A_persistencia_m3s",
+      "dQ_1d_m3s",
+      "dQ_3d_m3s",
+      "dQ_7d_m3s",
+      "slope_Q_3d_m3s_d",
+      "slope_Q_7d_m3s_d",
+      "Q_media_antecedente_m3s",
+      "Q_amplitude_antecedente_m3s",
+      "A_persistencia_menos_P80_m3s",
+      "sazonal_sin",
+      "sazonal_cos"
+    ],
+    "params": {
+      "C": 1.0
+    },
+    "threshold": 0.5049999999999999,
+    "threshold_rule": "maximizar recall com precisao >= 0.70",
+    "validation_metrics": {
+      "threshold": 0.5049999999999999,
+      "precision": 0.896551724137931,
+      "recall": 0.31137724550898205,
+      "f1": 0.4622222222222222,
+      "tp": 52,
+      "fp": 6,
+      "fn": 115,
+      "tn": 911
+    }
+  },
+  "PI90": {
+    "q_global": 231.6549993147401,
+    "q_predicted_high": 433.07769687843734,
+    "q_other": 166.28500925639574
+  }
+}
